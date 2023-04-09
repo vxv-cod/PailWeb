@@ -17,8 +17,11 @@ img {
 }
 
 h1 {
-    font-size: 20px;
+    font-size: 18px;
     margin: auto;
+    text-transform: uppercase;
+
+    
 }
 
 button {
@@ -33,11 +36,12 @@ button:hover {
   color: wheat;
 }
 
-
 /* block start ---------------------------------------------------------------------------''' */
 body {
   background: #1717177d;
   /* overflow: auto; */
+
+
 }
 
 section {
@@ -60,14 +64,16 @@ section {
 }
 
 header{
-  background-color: rgba(174, 125, 101, 0.578);
+  background-color: rgba(174, 125, 101, 1);
   display: flex;
   box-sizing: border-box;
   border: 2px solid #ffffff89;
   align-items: center;
-  width: 100%;
+
   padding: 0 10px;
   position: sticky;
+  top: 0px;
+  z-index: 999;
 
 }
 
