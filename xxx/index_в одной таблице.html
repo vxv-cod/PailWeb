@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/resetstyle.css">
+    <link rel="stylesheet" href="/style/style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <section class="hero">
+        <header>
+            <img src="/image/Logo.png" alt="Logo">
+            <h1>Расчет одиночной сваи по результатам статического зондирования</h1>
+        </header>
+
+        <div class="main">
+            <div class="inputData Svay">
+                <table class="my-table">
+                    <tr>
+                    <td class="CelCentr" colspan="2"><label>Данные сваи</label></td>
+                    <td class="CelCentr"><label>ИГЭ</label></td>
+                    <td class="CelCentr"><label>Н, м</label></td>                        
+                    
+                    </tr>
+                    
+                    <tr>
+                        <td><label for="Otmetka_verha">Отметка верха</label></td>
+                        <td><input type="number" name="Otmetka_verha" id="Otmetka_verha"></td>
+                        <td class="Skvajina"><input type="number"></td>
+                        <td class="Skvajina"><input type="number"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Dlina">Длина, м</label></td>
+                        <td><input type="number" name="Dlina" id="Dlina"></td>
+                        <td class="Skvajina"><input type="number"></td>
+                        <td class="Skvajina"><input type="number"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Diam">Диаметр / сторона, мм</label></td>
+                        <td><input type="number" name="Diam" id="Diam"></td>
+                        <td class="Skvajina"><input type="number"></td>
+                        <td class="Skvajina"><input type="number"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Tolchina">Толщина стенки, мм</label></td>
+                        <td><input type="number" name="Tolchina" id="Tolchina"></td>
+                        <td class="Skvajina"><input type="number"></td>
+                        <td class="Skvajina"><input type="number"></td>
+
+                    </tr>
+                    <td class="CelCentr" colspan="2"><label>Нагрузки</label></td>
+                    <td class="Skvajina"><input type="number"></td>
+                    <td class="Skvajina"><input type="number"></td>
+                    <tr>
+                        <td><label for="Sjim">Сжимающая, тс</label></td>
+                        <td><input type="number" name="Sjim" id="Sjim"></td>
+                        <td class="Skvajina"><input type="number"></td>
+                        <td class="Skvajina"><input type="number"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Vider">Выдергивающая, тс</label></td>
+                        <td><input type="number" name="Vider" id="Vider"></td>
+                        <td class="Skvajina"><input type="number"></td>
+                        <td class="Skvajina"><input type="number"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Yr_otv">Уровень ответ.-ти</label></td>
+                        <td><input type="number" name="Yr_otv" id="Yr_otv"></td>
+                        <td class="Skvajina"><input type="number"></td>
+                        <td class="Skvajina"><input type="number"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Koef_smerz">Коэф.-т смерзания</label></td>
+                        <td><input type="number" name="Koef_smerz" id="Koef_smerz"></td>
+                        <td class="Skvajina"><input type="number"></td>
+                        <td class="Skvajina"><input type="number"></td>
+                    </tr>
+                    <td class="CelCentr" colspan="2"><label>Коэффициент надежности</label></td>
+                    <td class="Skvajina"><input type="number"></td>
+                    <td class="Skvajina"><input type="number"></td>
+                    <tr>
+                        <td><label for="dlymetalla">для металла</label></td>
+                        <td><input type="number" name="dlymetalla" id="dlymetalla"></td>
+                        <td class="Skvajina"><input type="number"></td>
+                        <td class="Skvajina"><input type="number"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="dlybetona">для бетона</label></td>
+                        <td><input type="number" name="dlybetona" id="dlybetona"></td>
+                        <td class="Skvajina"><input type="number"></td>
+                        <td class="Skvajina"><input type="number"></td>
+                    </tr>
+                    <td class="CelCentr" colspan="2"><label>Данные грунтов</label></td>
+                    <td class="Skvajina"><input type="number"></td>
+                    <td class="Skvajina"><input type="number"></td>
+                    <tr>
+                        <td><label for="promerz_grunta">Промерзаниe грунта, м</label></td>
+                        <td><input type="number" name="promerz_grunta" id="promerz_grunta"></td>
+                        <td class="Skvajina"><input type="number"></td>
+                        <td class="Skvajina"><input type="number"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="qsi_max">qsi max торф, Мпа</label></td>
+                        <td><input type="number" name="qsi_max" id="qsi_max"></td>
+                        <td class="Skvajina"><input type="number"></td>
+                        <td class="Skvajina"><input type="number"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="qsi_min">qsi min песок, Мпа</label></td>
+                        <td><input type="number" name="qsi_min" id="qsi_min"></td>
+                        <td class="Skvajina"><input type="number"></td>
+                        <td class="Skvajina"><input type="number"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="vopornomgrunte">В опорном грунте, м</label></td>
+                        <td><input type="number" name="vopornomgrunte" id="vopornomgrunte"></td>
+                        <td class="Skvajina"><input type="number"></td>
+                        <td class="Skvajina"><input type="number"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="gruntpodsvaeu">Грунта под сваей, м</label></td>
+                        <td><input type="number" name="gruntpodsvaeu" id="gruntpodsvaeu"></td>
+                        <td class="Skvajina"><input type="number"></td>
+                        <td class="Skvajina"><input type="number"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="inputData Skvajina">
+
+                <table class="my-table"></table>
+                <td class="CelCentr" colspan="2"><label>Данные грунтов</label></td>
+                <tr>
+                    <td><label>ИГЭ</label></td>
+                    <td><label>Н, м</label></td>
+                </tr>
+                <tr>
+                    <td><input type="number"></td>
+                    <td><input type="number"></td>
+                </tr>                
+                
+                </table>
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        <input type="submit" name="submit" value="Разсчет">
+    </section>
+</body>
+</html>

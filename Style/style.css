@@ -1,0 +1,173 @@
+::-webkit-scrollbar{ width: 10px; /* 1 - вертикальный скроллбар */}
+::-webkit-scrollbar-button {background: #1717177d; height: 15px; /* 2 - кнопка */}
+::-webkit-scrollbar-track {background: #8d8c8c1a;/* 3 - трек */}
+::-webkit-scrollbar-track-piece { background: #8d8c8c1a; /* 4 – видимая часть трека */ }
+::-webkit-scrollbar-thumb {background: #8b5e0b;/* 5 - ползунок */}
+
+/* Убрать стрелки из полсей input */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+img {
+    height: 60px
+}
+
+h1 {
+    font-size: 20px;
+    margin: auto;
+}
+
+button {
+  background: #dddcdc7d;
+  background: rgb(178, 177, 177);
+  box-sizing: border-box;
+  box-shadow: 0px 0px 5px rgba(5, 5, 5, 0.578);
+}
+
+button:hover {
+  background: #1717177d;
+  color: wheat;
+}
+
+
+/* block start ---------------------------------------------------------------------------''' */
+body {
+  background: #1717177d;
+  /* overflow: auto; */
+}
+
+section {
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5);
+  margin: 10px;
+  border: 2px solid #ffffff89;
+
+  
+}
+
+.main {
+  position: relative;
+  box-sizing: border-box;
+  width: auto;
+  background: #dddcdc7d;
+  display: flex;
+  border: 1px solid #ffffff89;
+  position: relative;
+
+}
+
+header{
+  background-color: rgba(174, 125, 101, 0.578);
+  display: flex;
+  box-sizing: border-box;
+  border: 2px solid #ffffff89;
+  align-items: center;
+  width: 100%;
+  padding: 0 10px;
+  position: sticky;
+
+}
+
+.inputData {
+  display: flex;
+  padding: 5px;
+  width: 100%;
+  font-size: 12px;
+
+
+
+}
+
+
+.blockSvay, .blockSkvajina, .blockXarakter, .blockOtchet {
+  margin:  5px;
+  border: 2px solid #ffffff89;
+  display: inline-block;
+  box-sizing: border-box;
+
+  
+}
+
+.blockSvay {
+  /* min-width: 250px; */
+  width: auto;
+
+}
+
+.blockSkvajina {
+  width: auto;
+
+}
+
+.blockXarakter {
+  width: auto;
+
+}
+
+.blockOtchet {
+  padding: 10px;
+  
+}
+
+
+/* table start ---------------------------------------------------------------------------''' */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  
+}
+
+table td {
+  vertical-align: middle;
+  height: 20px;
+}
+
+.table_1 td:nth-child(1) {
+  min-width: 130px;
+}
+
+
+/* table cells start---------------------------------------------------------------------------''' */
+
+table input[type="number"] {
+  background: rgb(178, 177, 177);
+  box-sizing: border-box;
+  box-shadow: inset 0px 0px 5px rgba(5, 5, 5, 0.578);
+  border: 2px solid #ccc;
+  /* max-width: 40px; */
+  width: 50px;
+
+}
+
+table label {
+  box-sizing: border-box;
+  /* width: auto; */
+  /* width: 150px; */
+
+
+}
+
+.CelCentr, .CelCentr2 {
+  text-align: center;
+  vertical-align: middle;
+  box-sizing: border-box;
+
+}
+
+.CelCentr {
+  font-weight: 700;
+}
+
+.CelCentr2 {
+  font-weight: 400;
+}
+
+/* table cells End ---------------------------------------------------------------------------''' */
+
+
+
+
