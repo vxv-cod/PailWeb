@@ -85,23 +85,17 @@ header{
   font-size: 12px;
 
 
-
 }
 
 
 .inputData {
   margin:  5px;
+  padding: 10px;
   border: 2px solid #ffffff89;
   display: inline-block;
   box-sizing: border-box;
   width: auto;
   box-sizing: border-box;
-
-  
-}
-
-.blockOtchet {
-  padding: 10px;
 }
 
 
@@ -163,9 +157,18 @@ table label {
 
 @media(width < 900px) {
   .wrapperblock {
-    display: inline-block;
-    margin: auto;
+    /* display: inline-block; */
+    /* margin: auto; */
+    flex-wrap: wrap;
   }
-}
+    
+  /* .table_1 td:nth-child(1) {
+    min-width: auto;
+  } */
+
+  .inputData {
+    padding: auto;
+  }
+  }
 
 
