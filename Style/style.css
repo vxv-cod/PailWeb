@@ -84,10 +84,16 @@ header{
   display: flex;
 }
 
+.wrwpperDatainside {
+  display: flex;
+}
+
 .wrwpperOtchet {
   box-sizing: border-box;
   display: flex;
   height: 100%;
+
+
 }
 
 .inputData {
@@ -158,10 +164,11 @@ table label {
 
 
 /* media ---------------------------------------------------------------------------''' */
-@media(width < 900px) {
+@media(width < 960px) {
   .wrwpperData {
     flex-wrap: wrap;
     min-width: 347px;
+    /* max-width: 355px; */
   }
 
   .blockXarakter {
