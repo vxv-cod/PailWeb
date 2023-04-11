@@ -7,7 +7,7 @@ console.log(form.elements)
 
 // получить данные из input
 form.addEventListener('input', function(event){
-    formData[event.target.name] = event.target.value
+    formData[event.target.name] = event.target.value;
     LS.setItem('formData', JSON.stringify(formData));
     eel.value_py(formData);
 });
@@ -18,17 +18,34 @@ if (LS.getItem('formData')) {
     // form.elements[name]
     for (let key in formData){
         form.elements[key].value = formData[key];
+        // console.log(key, form.elements[key].value, formData[key])
     }
 }
 
 
+// eel.value_py(formData);
+// document.querySelector('button').onclick = sendData;
 
 // Отслеживание нажатие кнопки
 let btn = document.querySelector("#submit");
 btn.addEventListener("click", sendData);
 
-async function sendData() {
-    await eel.value_py(formData);
+let formDataPy = {}
+
+function sendData() {
+    eel.value_py('Данные собраны');
+    eel.value_py(formData);
+    for (let key in form.elements){
+        console.log(form.elements[key].value);
+        if (form.elements[key].value != ''  || form.elements[key].value != null) {
+            formDataPy[key] = form.elements[key].value;
+            // formDataPy[key] = JSON.stringify(form.elements[key].value);
+        }
+
+    }
+    eel.value_py(formDataPy);
+    // eel.value_py(form.elements);
+    console.log(formData);
 }
 
 
