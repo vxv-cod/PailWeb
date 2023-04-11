@@ -1,38 +1,67 @@
-async function create_cur_for_rub (){
-    let value_rub = document.getElementById("Otmetka_verha").value;
-    await eel.value_py(value_rub)
-    
-    // получаем список всех input'ов в таблице 1
-    let list_curs = document.getSelection('td');
-    await eel.value_py(list_curs);
-    for (let div_cur of list_curs) {
-        await eel.value_py(div_cur.value);
+let formData = {}
+const form = document.querySelector('form')
+const LS = localStorage;
+// LS.clear()
+console.log(form.elements)
+// eel.value_py(form.elements);
 
-        // теперь передает значение в Python для обработки
-        let name_cur = div_cur.getElementsByTagName("label")[0].textContent;
-        // let name_cur = div_cur.getElementById("Otmetka_verha").value;
-        // await eel.value_py(name_cur);
-        // let inputxxx = div_cur.getElementsByTagName("label").children
-        await eel.value_py(name_cur);
+// получить данные из input
+form.addEventListener('input', function(event){
+    formData[event.target.name] = event.target.value
+    LS.setItem('formData', JSON.stringify(formData));
+    eel.value_py(formData);
+});
 
-
-        // выводим на экран полученное значение
-        // div_cur.getElementsByTagName("input")[0].value = value_cur;
-    // }
-    
-}}
-
-
-document.getElementById("submit").onclick = create_cur_for_rub;
+// Восстановить данные в ячейи
+if (LS.getItem('formData')) {
+    formData = JSON.parse(LS.getItem('formData'));
+    // form.elements[name]
+    for (let key in formData){
+        form.elements[key].value = formData[key];
+    }
+}
 
 
-// let btn = document.querySelector("#submit");
-// btn.addEventListener("click", sendData);
+
+// Отслеживание нажатие кнопки
+let btn = document.querySelector("#submit");
+btn.addEventListener("click", sendData);
+
+async function sendData() {
+    await eel.value_py(formData);
+}
 
 
-// async function sendData() {
-//     let value = document.querySelector("#Otmetka_verha").value;
-//     await eel.value_py(value);
-//     console.log(value);
-// }
+// // Размер экрана
+// const screenWidth = window.screen.width
+// const screenHeight = window.screen.height
+// eel.value_py(screenWidth);
+// eel.value_py(screenHeight);
 
+// const windowOuterWidth = window.outerWidth
+// const windowOuterHeight = window.outerHeight
+// eel.value_py(windowOuterWidth);
+// eel.value_py(windowOuterWidth);
+
+// const windowInnerWidth = document.documentElement.clientWidth
+// const windowInnerHeight = document.documentElement.clientHeight
+// eel.value_py(windowInnerWidth);
+// eel.value_py(windowInnerHeight);
+
+// const pageWidth = document.documentElement.scrollWidth
+// const pageHeight = document.documentElement.scrollHeight
+// eel.value_py(pageWidth);
+// eel.value_py(pageHeight);
+
+// // Отслеживаем размер окна для настройки
+// window.addEventListener(`resize`, event => {
+//     const windowOuterHeight = window.outerHeight
+//     eel.value_py(windowOuterHeight);
+// }, false);
+
+// Отслеживание закрытие окна
+// window.addEventListener('beforeunload', (event) => {
+//     event.preventDefault();
+//     let ааа = event.returnValue = LS.clear();
+//     eel.value_py(ааа);
+// });

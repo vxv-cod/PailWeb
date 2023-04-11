@@ -12,6 +12,9 @@ input::-webkit-inner-spin-button {
   margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 
+body {
+  height: 400px;
+}
 
 img {
     height: 60px
@@ -42,8 +45,8 @@ body {
 }
 
 section {
-  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5);
-  margin: 10px;
+  /* box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5); */
+  /* margin: 10px; */
   border: 2px solid #ffffff89;
 }
 
@@ -117,7 +120,7 @@ table {
 
 table td {
   vertical-align: middle;
-  height: 20px;
+  height: 25px;
 }
 
 .table_1 td:nth-child(1) {
@@ -134,6 +137,8 @@ table input[type="number"] {
   border: 2px solid #ccc;
   /* max-width: 40px; */
   width: 50px;
+  height: 24px;
+  text-align: center;
 
 }
 
