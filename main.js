@@ -2,20 +2,25 @@ let formData = {}
 const form = document.querySelector('form')
 const LS = localStorage;
 // LS.clear()
-console.log(form.elements)
+// console.log(form.elements)
 // eel.value_py(form.elements);
 
 // получить данные из input
 form.addEventListener('input', function(event){
     formData[event.target.name] = event.target.value;
     LS.setItem('formData', JSON.stringify(formData));
-    eel.value_py(formData);
+    // eel.value_py(formData);
+    eel.printpy('formData = ', formData)
 });
 
 // Восстановить данные в ячейи
 if (LS.getItem('formData')) {
     formData = JSON.parse(LS.getItem('formData'));
     // form.elements[name]
+    // for (let key in formData){
+    //     form.elements[key].value = formData[key];
+    //     // console.log(key, form.elements[key].value, formData[key])
+    // }
     for (let key in formData){
         form.elements[key].value = formData[key];
         // console.log(key, form.elements[key].value, formData[key])
@@ -30,12 +35,14 @@ if (LS.getItem('formData')) {
 let btn = document.querySelector("#submit");
 btn.addEventListener("click", sendData);
 
-let formDataPy = {}
+let formDataPy = {};
 
 async function sendData() {
     // eel.value_py('Данные собраны');
     // eel.value_py(formData);
     for (let key in form.elements){
+        // console.log('key = ', key)
+        // eel.printpy('key = ', key)
         // console.log(form.elements[key].value);
         if (form.elements[key].value != ''  && form.elements[key].value != null) {
             formDataPy[key] = form.elements[key].value;
@@ -43,7 +50,10 @@ async function sendData() {
         }
 
     }
-    var content =  eel.value_py(formDataPy);
+    eel.printpy('formDataPy = ', formDataPy)
+    let content =  eel.value_py(formDataPy);
+    eel.printpy('content = ', content)
+    // var content =  eel.value_py(formData);
     // document.getElementById('my-docx-content').textContent = content;
     
     var el = document.getElementById('my-docx-content');

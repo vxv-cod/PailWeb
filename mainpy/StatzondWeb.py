@@ -865,7 +865,6 @@ def raschet(dannie, ige_skv, nni, ige_xap, qi_xap, fi_xap):
     #     for paragraph in document.paragraphs:
     #         file.write(paragraph.text + '\n')
     
-    print(textOtchet)
 
     document.save('result.docx')
 
@@ -873,6 +872,10 @@ def raschet(dannie, ige_skv, nni, ige_xap, qi_xap, fi_xap):
         file.write(textOtchet)
         file.close()    
     # return document
+    # print(textOtchet)
+    print('----------------------------------')
+    print('----------------------------------')
+    
     return textOtchet
 # # ----------------------------------------------------------------------------------------
 # def text_abzac_color_000(x):

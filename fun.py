@@ -5,8 +5,12 @@ from mainpy.Tab73 import fsi73
 from rich import print
 
 @eel.expose
+def printpy(*args):
+    print(args)
+
+@eel.expose
 def value_py(respo):
-    # print(respo)
+    print(f"respo = {respo}")
     
     dannie_key = [
         'Otmetka_verha',
@@ -162,8 +166,9 @@ def value_py(respo):
     
     
     # print(dannie, ige_skv, nni, ige_xap, qi_xap, fi_xap)
-    raschet(dannie, ige_skv, nni, ige_xap, qi_xap, fi_xap)
-    # return
+    textweb = raschet(dannie, ige_skv, nni, ige_xap, qi_xap, fi_xap)
+    print(textweb)
+    return textweb
     
     
     
