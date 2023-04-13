@@ -32,21 +32,41 @@ btn.addEventListener("click", sendData);
 
 let formDataPy = {}
 
-function sendData() {
-    eel.value_py('Данные собраны');
-    eel.value_py(formData);
+async function sendData() {
+    // eel.value_py('Данные собраны');
+    // eel.value_py(formData);
     for (let key in form.elements){
-        console.log(form.elements[key].value);
-        if (form.elements[key].value != ''  || form.elements[key].value != null) {
+        // console.log(form.elements[key].value);
+        if (form.elements[key].value != ''  && form.elements[key].value != null) {
             formDataPy[key] = form.elements[key].value;
             // formDataPy[key] = JSON.stringify(form.elements[key].value);
         }
 
     }
-    eel.value_py(formDataPy);
+    var content =  eel.value_py(formDataPy);
+    // document.getElementById('my-docx-content').textContent = content;
+    
+    var el = document.getElementById('my-docx-content');
+    // if (typeof el.innerText !== 'undefined') {
+    //     // IE8-
+    //     el.innerText = content;
+    // } else {
+    //     // Нормальные браузеры
+    //     el.textContent = content;
+    // }
+    el.innerHTML  = content;
+
     // eel.value_py(form.elements);
-    console.log(formData);
+    // console.log(formData);
+
+    // var content = document.getElementById('my-docx-content').innerHTML;
+    // var xhr = new XMLHttpRequest();
+    // xhr.open('POST', '/save_changes');
+    // xhr.setRequestHeader('Content-Type', 'application/json');
+    // xhr.send(JSON.stringify({'html': content}));
 }
+
+
 
 
 // // Размер экрана
@@ -70,7 +90,7 @@ function sendData() {
 // eel.value_py(pageWidth);
 // eel.value_py(pageHeight);
 
-// // Отслеживаем размер окна для настройки
+// Отслеживаем размер окна для настройки
 // window.addEventListener(`resize`, event => {
 //     const windowOuterHeight = window.outerHeight
 //     eel.value_py(windowOuterHeight);
@@ -82,3 +102,5 @@ function sendData() {
 //     let ааа = event.returnValue = LS.clear();
 //     eel.value_py(ааа);
 // });
+
+

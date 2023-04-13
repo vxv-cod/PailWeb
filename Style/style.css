@@ -66,11 +66,11 @@ header{
   box-sizing: border-box;
   border: 2px solid #ffffff89;
   align-items: center;
-
   padding: 0 10px;
   position: sticky;
   top: 0px;
   z-index: 999;
+
 }
 
 .wrapperblock {
@@ -78,12 +78,15 @@ header{
   padding: 5px;
   width: 100%;
   font-size: 12px;
+  
+
 }
 
 .wrwpperData {
   box-sizing: border-box;
   display: flex;
   flex-basis: 20%;
+  
 
 }
 
@@ -221,3 +224,6 @@ iframe {
   width: 100%;
 }
 
+#clear_ {
+  width: 100%;
+}

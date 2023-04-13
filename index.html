@@ -18,7 +18,7 @@
                 <img src="./image/Logo.png" alt="Logo">
                 <h1>Расчет одиночной сваи по результатам статического зондирования</h1>
                 <!-- <button><img name="Ras" src="./image/Calc.png" alt="Calc"></button> -->
-                <button type="submit" id="submit" >submit</button>
+                <button type="submit" id="submit" >Расчет</button>
             </header>
             <div class="main">
                 <div class="wrapperblock">
@@ -48,6 +48,11 @@
                                     <tr>
                                         <td><label for="Tolchina">Толщина стенки, мм</label></td>
                                         <td><input type="number" step="any" name="Tolchina" id="Tolchina"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label for="Plotnost">Плотность бетона, тс/м3</label></td>
+                                        <td><input type="number" step="any" name="Plotnost" id="Plotnost"></td>
                                     </tr>
 
                                     <tr>
@@ -116,7 +121,12 @@
                                         <td><label for="gruntpodsvaeu">Грунта под сваей, м</label></td>
                                         <td><input type="number" step="any" name="gruntpodsvaeu" id="gruntpodsvaeu"></td>
                                     </tr>
-
+                                    
+                                    <tr>
+                                        <td> </button></td>
+                                        <td><button type="submit" id="clear_" >X</button></td>
+                                        <!-- <td class="CelCentr" colspan="2"><button type="submit" id="submit" >Расчет</button></td> -->
+                                    </tr>
                                 </table>
                             </div>
 
@@ -371,7 +381,10 @@
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic obcaecati beatae incidunt rem minus eum consequuntur non. Provident vero vitae, tempora quos nobis a ex quam magni vel, ducimus ipsa.
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic obcaecati beatae incidunt rem minus eum consequuntur non. Provident vero vitae, tempora quos nobis a ex quam magni vel, ducimus ipsa.
                             </p> -->
-                            <iframe src="./xxx/6666/1111.htm" frameborder="0">Отчет</iframe>
+                            <iframe src="document.html" frameborder="0" id="my-docx-content">Отчет</iframe>
+                            <!-- <div><textarea name="" id="my-docx-content" cols="50" rows="50" value="Привет"></textarea></div> -->
+                            <!-- <div id="my-docx-content"></div> -->
+
                         </div>
                     </div>
                 </div>
