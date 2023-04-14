@@ -2,7 +2,7 @@ import eel
 from mainpy.StatzondWeb import raschet
 from mainpy.Tab73 import fsi73
 
-from rich import print
+# from rich import print
 
 @eel.expose
 def printpy(*args):
@@ -152,7 +152,6 @@ def value_py(respo):
                 list_.append(xxx)
             else:
                 list_.append(0)
-        # print(list_)
         return list_
     
     dannie = sbor(dannie_key)
@@ -162,15 +161,9 @@ def value_py(respo):
     qi_xap = sbor(qi_xap_key)
     fi_xap = sbor(fi_xap_key)
     
-    print(f"nni_fun = {nni}")
-    
-    
-    # print(dannie, ige_skv, nni, ige_xap, qi_xap, fi_xap)
     textweb = raschet(dannie, ige_skv, nni, ige_xap, qi_xap, fi_xap)
-    print(textweb)
+    
     return textweb
     
     
-    
-    
-    
+

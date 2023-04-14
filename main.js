@@ -5,80 +5,94 @@ const LS = localStorage;
 // console.log(form.elements)
 // eel.value_py(form.elements);
 
+
 // получить данные из input
 form.addEventListener('input', function(event){
     formData[event.target.name] = event.target.value;
     LS.setItem('formData', JSON.stringify(formData));
-    // eel.value_py(formData);
     eel.printpy('formData = ', formData)
 });
+
 
 // Восстановить данные в ячейи
 if (LS.getItem('formData')) {
     formData = JSON.parse(LS.getItem('formData'));
     // form.elements[name]
-    // for (let key in formData){
-    //     form.elements[key].value = formData[key];
-    //     // console.log(key, form.elements[key].value, formData[key])
-    // }
     for (let key in formData){
-        form.elements[key].value = formData[key];
-        // console.log(key, form.elements[key].value, formData[key])
+        if (key != 'my-docx-content') {
+            eel.printpy('key = ', key)
+            form.elements[key].value = formData[key];
+        }
     }
 }
 
-
-// eel.value_py(formData);
-// document.querySelector('button').onclick = sendData;
 
 // Отслеживание нажатие кнопки
-let btn = document.querySelector("#submit");
-btn.addEventListener("click", sendData);
-
-let formDataPy = {};
-
-async function sendData() {
-    // eel.value_py('Данные собраны');
-    // eel.value_py(formData);
+document.querySelector("#submit").onclick = async function sendData(){ 
+    let formDataPy = {};
     for (let key in form.elements){
-        // console.log('key = ', key)
-        // eel.printpy('key = ', key)
-        // console.log(form.elements[key].value);
         if (form.elements[key].value != ''  && form.elements[key].value != null) {
             formDataPy[key] = form.elements[key].value;
-            // formDataPy[key] = JSON.stringify(form.elements[key].value);
         }
-
     }
-    eel.printpy('formDataPy = ', formDataPy)
-    let content =  eel.value_py(formDataPy);
-    eel.printpy('content = ', content)
-    // var content =  eel.value_py(formData);
-    // document.getElementById('my-docx-content').textContent = content;
-    
-    var el = document.getElementById('my-docx-content');
-    // if (typeof el.innerText !== 'undefined') {
-    //     // IE8-
-    //     el.innerText = content;
-    // } else {
-    //     // Нормальные браузеры
-    //     el.textContent = content;
-    // }
+    let content = await eel.value_py(formDataPy)();
+    let el = document.getElementById('my-docx-content');
     el.innerHTML  = content;
-
-    // eel.value_py(form.elements);
-    // console.log(formData);
-
-    // var content = document.getElementById('my-docx-content').innerHTML;
-    // var xhr = new XMLHttpRequest();
-    // xhr.open('POST', '/save_changes');
-    // xhr.setRequestHeader('Content-Type', 'application/json');
-    // xhr.send(JSON.stringify({'html': content}));
-}
+} 
 
 
 
+// // Отслеживание нажатие кнопки
+// let btn = document.querySelector("#submit");
+// btn.addEventListener("click", sendData);
 
+
+// async function sendData() {
+//     let formDataPy = {};
+//     for (let key in form.elements){
+//         if (form.elements[key].value != ''  && form.elements[key].value != null) {
+//             formDataPy[key] = form.elements[key].value;
+//         }
+
+//     }
+//     let content = await eel.value_py(formDataPy)();
+//     // eel.printpy('content = ', content)
+//     let el = document.getElementById('my-docx-content');
+//     el.innerHTML  = content;
+// }
+
+
+// Отслеживание нажатие кнопки
+document.querySelector("#submit").onclick = async function sendData(){ 
+    let formDataPy = {};
+    for (let key in form.elements){
+        if (form.elements[key].value != ''  && form.elements[key].value != null) {
+            formDataPy[key] = form.elements[key].value;
+        }
+    }
+    let content = await eel.value_py(formDataPy)();
+    let el = document.getElementById('my-docx-content');
+    el.innerHTML  = content;
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// =================================================================================
 // // Размер экрана
 // const screenWidth = window.screen.width
 // const screenHeight = window.screen.height
