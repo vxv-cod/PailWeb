@@ -21,222 +21,229 @@
                 <button type="button" id="submit">Расчет</button>
                 <button type="button" id="Replace_text">Replace text</button>
             </header>
-            <div class="main">
-                <div class="wrapperblock">
-                    <div class="wrwpperData">
-                        <div class="wrwpperDatainside">
-                            <div class="inputData blockSvay" >
-                                <table class="table_1" id="blockSvayId">
-                                    <tr>
-                                        <td class="CelCentr" colspan="2"><label>Данные сваи</label></td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td><label for="Otmetka_verha">Отметка верха</label></td>
-                                        <td><input type="number" step="any" name="Otmetka_verha" id="Otmetka_verha" value="555"></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><label for="Dlina">Длина, м</label></td>
-                                        <td><input type="number" step="any" name="Dlina" id="Dlina" value="666"></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><label for="Diam">Диаметр / сторона, мм</label></td>
-                                        <td><input type="number" step="any" name="Diam" id="Diam"></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><label for="Tolchina">Толщина стенки, мм</label></td>
-                                        <td><input type="number" step="any" name="Tolchina" id="Tolchina"></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><label for="Plotnost">Плотность бетона, тс/м3</label></td>
-                                        <td><input type="number" step="any" name="Plotnost" id="Plotnost"></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td class="CelCentr" colspan="2"><label>Нагрузки</label></td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td><label for="Sjim">Сжимающая, тс</label></td>
-                                        <td><input type="number" step="any" name="Sjim" id="Sjim"></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><label for="Vider">Выдергивающая, тс</label></td>
-                                        <td><input type="number" step="any" name="Vider" id="Vider"></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><label for="Yr_otv">Уровень ответ.-ти</label></td>
-                                        <td><input type="number" step="any" name="Yr_otv" id="Yr_otv"></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><label for="Koef_smerz">Коэф.-т смерзания</label></td>
-                                        <td><input type="number" step="any" name="Koef_smerz" id="Koef_smerz"></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td class="CelCentr" colspan="2"><label>Коэффициент надежности</label></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><label for="dlymetalla">для металла</label></td>
-                                        <td><input type="number" step="any" name="dlymetalla" id="dlymetalla"></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><label for="dlybetona">для бетона</label></td>
-                                        <td><input type="number" step="any" name="dlybetona" id="dlybetona"></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td class="CelCentr" colspan="2"><label>Данные грунтов</label></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><label for="promerz_grunta">Промерзаниe грунта, м</label></td>
-                                        <td><input type="number" step="any" name="promerz_grunta" id="promerz_grunta"></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><label for="qsi_max">qsi max торф, Мпа</label></td>
-                                        <td><input type="number" step="any" name="qsi_max" id="qsi_max"></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><label for="qsi_min">qsi min песок, Мпа</label></td>
-                                        <td><input type="number" step="any" name="qsi_min" id="qsi_min"></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><label for="vopornomgrunte">В опорном грунте, м</label></td>
-                                        <td><input type="number" step="any" name="vopornomgrunte" id="vopornomgrunte"></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><label for="gruntpodsvaeu">Грунта под сваей, м</label></td>
-                                        <td><input type="number" step="any" name="gruntpodsvaeu" id="gruntpodsvaeu"></td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td> </button></td>
-                                        <td><button type="submit" id="clear_" >X</button></td>
-                                        <!-- <td class="CelCentr" colspan="2"><button type="submit" id="submit" >Расчет</button></td> -->
-                                    </tr>
-                                </table>
-                            </div>
-
-                            <div class="inputData blockSkvajina">
-
-                                <table class="table_2">
-
-                                    <tr>
-                                        <td class="CelCentr" colspan="2"><label>Скважина</label></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td class="CelCentr2"><label>ИГЭ</label></td>
-                                        <td class="CelCentr2"><label>Н, м</label></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><input type="number" step="any" name="table_2_col-1_row-1" id="table_2_col-1_row-1"></td>
-                                        <td><input type="number" step="any" name="table_2_col-2_row-1" id="table_2_col-2_row-1"></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><input type="number" step="any" name="table_2_col-1_row-2" id="table_2_col-1_row-2"></td>
-                                        <td><input type="number" step="any" name="table_2_col-2_row-2" id="table_2_col-2_row-2"></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><input type="number" step="any" name="table_2_col-1_row-3" id="table_2_col-1_row-3"></td>
-                                        <td><input type="number" step="any" name="table_2_col-2_row-3" id="table_2_col-2_row-3"></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><input type="number" step="any" name="table_2_col-1_row-4" id="table_2_col-1_row-4"></td>
-                                        <td><input type="number" step="any" name="table_2_col-2_row-4" id="table_2_col-2_row-4"></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><input type="number" step="any" name="table_2_col-1_row-5" id="table_2_col-1_row-5"></td>
-                                        <td><input type="number" step="any" name="table_2_col-2_row-5" id="table_2_col-2_row-5"></td>
-                                    </tr>
+            <div class="wrapperblock">
+                <div class="wrwpperData">
+                    <div class="container_blockSvay_and_blockSkvajina">
+                        <div class="inputData blockSvay" >
+                            <table class="table_1" id="blockSvayId">
+                                <tr>
+                                    <td class="CelCentr" colspan="2"><label>Данные сваи</label></td>
+                                </tr>
                                 
-                                    <tr>
-                                        <td><input type="number" step="any" name="table_2_col-1_row-6" id="table_2_col-1_row-6"></td>
-                                        <td><input type="number" step="any" name="table_2_col-2_row-6" id="table_2_col-2_row-6"></td>
-                                    </tr>
+                                <tr>
+                                    <td><label for="Otmetka_verha">Отметка верха</label></td>
+                                    <td><input type="number" step="any" name="Otmetka_verha" id="Otmetka_verha" value="555"></td>
+                                </tr>
 
-                                    <tr>
-                                        <td><input type="number" step="any" name="table_2_col-1_row-7" id="table_2_col-1_row-7"></td>
-                                        <td><input type="number" step="any" name="table_2_col-2_row-7" id="table_2_col-2_row-7"></td>
-                                    </tr>
+                                <tr>
+                                    <td><label for="Dlina">Длина, м</label></td>
+                                    <td><input type="number" step="any" name="Dlina" id="Dlina" value="666"></td>
+                                </tr>
 
-                                    <tr>
-                                        <td><input type="number" step="any" name="table_2_col-1_row-8" id="table_2_col-1_row-8"></td>
-                                        <td><input type="number" step="any" name="table_2_col-2_row-8" id="table_2_col-2_row-8"></td>
-                                    </tr>
+                                <tr>
+                                    <td><label for="Diam">Диаметр / сторона, мм</label></td>
+                                    <td><input type="number" step="any" name="Diam" id="Diam"></td>
+                                </tr>
 
-                                    <tr>
-                                        <td><input type="number" step="any" name="table_2_col-1_row-9" id="table_2_col-1_row-9"></td>
-                                        <td><input type="number" step="any" name="table_2_col-2_row-9" id="table_2_col-2_row-9"></td>
-                                    </tr>
+                                <tr>
+                                    <td><label for="Tolchina">Толщина стенки, мм</label></td>
+                                    <td><input type="number" step="any" name="Tolchina" id="Tolchina"></td>
+                                </tr>
 
-                                    <tr>
-                                        <td><input type="number" step="any" name="table_2_col-1_row-10" id="table_2_col-1_row-10"></td>
-                                        <td><input type="number" step="any" name="table_2_col-2_row-10" id="table_2_col-2_row-10"></td>
-                                    </tr>
+                                <tr>
+                                    <td><label for="Plotnost">Плотность бетона, тс/м3</label></td>
+                                    <td><input type="number" step="any" name="Plotnost" id="Plotnost"></td>
+                                </tr>
 
-                                    <tr>
-                                        <td><input type="number" step="any" name="table_2_col-1_row-11" id="table_2_col-1_row-11"></td>
-                                        <td><input type="number" step="any" name="table_2_col-2_row-11" id="table_2_col-2_row-11"></td>
-                                    </tr>
-                            
-                                    <tr>
-                                        <td><input type="number" step="any" name="table_2_col-1_row-12" id="table_2_col-1_row-12"></td>
-                                        <td><input type="number" step="any" name="table_2_col-2_row-12" id="table_2_col-2_row-12"></td>
-                                    </tr>
-                            
-                            
-                                    <tr>
-                                        <td><input type="number" step="any" name="table_2_col-1_row-13" id="table_2_col-1_row-13"></td>
-                                        <td><input type="number" step="any" name="table_2_col-2_row-13" id="table_2_col-2_row-13"></td>
-                                    </tr>
-                            
-                            
-                                    <tr>
-                                        <td><input type="number" step="any" name="table_2_col-1_row-14" id="table_2_col-1_row-14"></td>
-                                        <td><input type="number" step="any" name="table_2_col-2_row-14" id="table_2_col-2_row-14"></td>
-                                    </tr>
-                            
-                            
-                                    <tr>
-                                        <td><input type="number" step="any" name="table_2_col-1_row-15" id="table_2_col-1_row-15"></td>
-                                        <td><input type="number" step="any" name="table_2_col-2_row-15" id="table_2_col-2_row-15"></td>
-                                    </tr>
-                            
-                            
-                                    <tr>
-                                        <td><input type="number" step="any" name="table_2_col-1_row-16" id="table_2_col-1_row-16"></td>
-                                        <td><input type="number" step="any" name="table_2_col-2_row-16" id="table_2_col-2_row-16"></td>
-                                    </tr>
-                            
-                            
-                                    <tr>
-                                        <td><input type="number" step="any" name="table_2_col-1_row-17" id="table_2_col-1_row-17"></td>
-                                        <td><input type="number" step="any" name="table_2_col-2_row-17" id="table_2_col-2_row-17"></td>
-                                    </tr>
-                                </table>
-                            </div>
+                                <tr>
+                                    <td class="CelCentr" colspan="2"><label>Нагрузки</label></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td><label for="Sjim">Сжимающая, тс</label></td>
+                                    <td><input type="number" step="any" name="Sjim" id="Sjim"></td>
+                                </tr>
+
+                                <tr>
+                                    <td><label for="Vider">Выдергивающая, тс</label></td>
+                                    <td><input type="number" step="any" name="Vider" id="Vider"></td>
+                                </tr>
+
+                                <tr>
+                                    <td><label for="Yr_otv">Уровень ответ.-ти</label></td>
+                                    <td><input type="number" step="any" name="Yr_otv" id="Yr_otv"></td>
+                                </tr>
+
+                                <tr>
+                                    <td><label for="Koef_smerz">Коэф.-т смерзания</label></td>
+                                    <td><input type="number" step="any" name="Koef_smerz" id="Koef_smerz"></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="CelCentr" colspan="2"><label>Коэффициент надежности</label></td>
+                                </tr>
+
+                                <tr>
+                                    <td><label for="dlymetalla">для металла</label></td>
+                                    <td><input type="number" step="any" name="dlymetalla" id="dlymetalla"></td>
+                                </tr>
+
+                                <tr>
+                                    <td><label for="dlybetona">для бетона</label></td>
+                                    <td><input type="number" step="any" name="dlybetona" id="dlybetona"></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="CelCentr" colspan="2"><label>Данные грунтов</label></td>
+                                </tr>
+
+                                <tr>
+                                    <td><label for="promerz_grunta">Промерзаниe грунта, м</label></td>
+                                    <td><input type="number" step="any" name="promerz_grunta" id="promerz_grunta"></td>
+                                </tr>
+
+                                <tr>
+                                    <td><label for="qsi_max">qsi max торф, Мпа</label></td>
+                                    <td><input type="number" step="any" name="qsi_max" id="qsi_max"></td>
+                                </tr>
+
+                                <tr>
+                                    <td><label for="qsi_min">qsi min песок, Мпа</label></td>
+                                    <td><input type="number" step="any" name="qsi_min" id="qsi_min"></td>
+                                </tr>
+
+                                <tr>
+                                    <td><label for="vopornomgrunte">В опорном грунте, м</label></td>
+                                    <td><input type="number" step="any" name="vopornomgrunte" id="vopornomgrunte"></td>
+                                </tr>
+
+                                <tr>
+                                    <td><label for="gruntpodsvaeu">Грунта под сваей, м</label></td>
+                                    <td><input type="number" step="any" name="gruntpodsvaeu" id="gruntpodsvaeu"></td>
+                                </tr>
+                                
+                                <!-- <tr> -->
+                                    <!-- <td></td>
+                                    <td><button type="submit" id="clear_" >X</button></td> -->
+                                    <!-- <td class="CelCentr" colspan="2"><button type="submit" id="submit" >Расчет</button></td> -->
+                                <!-- </tr> -->
+                            </table>
                         </div>
+
+                        <div class="inputData blockSkvajina">
+
+                            <table class="table_2">
+
+                                <tr>
+                                    <td class="CelCentr" colspan="2"><label>Скважина</label></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="CelCentr2"><label>ИГЭ</label></td>
+                                    <td class="CelCentr2"><label>Н, м</label></td>
+                                </tr>
+
+                                <tr>
+                                    <td><input type="number" step="any" name="table_2_col-1_row-1" id="table_2_col-1_row-1"></td>
+                                    <td><input type="number" step="any" name="table_2_col-2_row-1" id="table_2_col-2_row-1"></td>
+                                </tr>
+
+                                <tr>
+                                    <td><input type="number" step="any" name="table_2_col-1_row-2" id="table_2_col-1_row-2"></td>
+                                    <td><input type="number" step="any" name="table_2_col-2_row-2" id="table_2_col-2_row-2"></td>
+                                </tr>
+
+                                <tr>
+                                    <td><input type="number" step="any" name="table_2_col-1_row-3" id="table_2_col-1_row-3"></td>
+                                    <td><input type="number" step="any" name="table_2_col-2_row-3" id="table_2_col-2_row-3"></td>
+                                </tr>
+
+                                <tr>
+                                    <td><input type="number" step="any" name="table_2_col-1_row-4" id="table_2_col-1_row-4"></td>
+                                    <td><input type="number" step="any" name="table_2_col-2_row-4" id="table_2_col-2_row-4"></td>
+                                </tr>
+
+                                <tr>
+                                    <td><input type="number" step="any" name="table_2_col-1_row-5" id="table_2_col-1_row-5"></td>
+                                    <td><input type="number" step="any" name="table_2_col-2_row-5" id="table_2_col-2_row-5"></td>
+                                </tr>
+                            
+                                <tr>
+                                    <td><input type="number" step="any" name="table_2_col-1_row-6" id="table_2_col-1_row-6"></td>
+                                    <td><input type="number" step="any" name="table_2_col-2_row-6" id="table_2_col-2_row-6"></td>
+                                </tr>
+
+                                <tr>
+                                    <td><input type="number" step="any" name="table_2_col-1_row-7" id="table_2_col-1_row-7"></td>
+                                    <td><input type="number" step="any" name="table_2_col-2_row-7" id="table_2_col-2_row-7"></td>
+                                </tr>
+
+                                <tr>
+                                    <td><input type="number" step="any" name="table_2_col-1_row-8" id="table_2_col-1_row-8"></td>
+                                    <td><input type="number" step="any" name="table_2_col-2_row-8" id="table_2_col-2_row-8"></td>
+                                </tr>
+
+                                <tr>
+                                    <td><input type="number" step="any" name="table_2_col-1_row-9" id="table_2_col-1_row-9"></td>
+                                    <td><input type="number" step="any" name="table_2_col-2_row-9" id="table_2_col-2_row-9"></td>
+                                </tr>
+
+                                <tr>
+                                    <td><input type="number" step="any" name="table_2_col-1_row-10" id="table_2_col-1_row-10"></td>
+                                    <td><input type="number" step="any" name="table_2_col-2_row-10" id="table_2_col-2_row-10"></td>
+                                </tr>
+
+                                <tr>
+                                    <td><input type="number" step="any" name="table_2_col-1_row-11" id="table_2_col-1_row-11"></td>
+                                    <td><input type="number" step="any" name="table_2_col-2_row-11" id="table_2_col-2_row-11"></td>
+                                </tr>
                         
+                                <tr>
+                                    <td><input type="number" step="any" name="table_2_col-1_row-12" id="table_2_col-1_row-12"></td>
+                                    <td><input type="number" step="any" name="table_2_col-2_row-12" id="table_2_col-2_row-12"></td>
+                                </tr>
+                        
+                        
+                                <tr>
+                                    <td><input type="number" step="any" name="table_2_col-1_row-13" id="table_2_col-1_row-13"></td>
+                                    <td><input type="number" step="any" name="table_2_col-2_row-13" id="table_2_col-2_row-13"></td>
+                                </tr>
+                        
+                        
+                                <tr>
+                                    <td><input type="number" step="any" name="table_2_col-1_row-14" id="table_2_col-1_row-14"></td>
+                                    <td><input type="number" step="any" name="table_2_col-2_row-14" id="table_2_col-2_row-14"></td>
+                                </tr>
+                        
+                        
+                                <tr>
+                                    <td><input type="number" step="any" name="table_2_col-1_row-15" id="table_2_col-1_row-15"></td>
+                                    <td><input type="number" step="any" name="table_2_col-2_row-15" id="table_2_col-2_row-15"></td>
+                                </tr>
+                        
+                        
+                                <tr>
+                                    <td><input type="number" step="any" name="table_2_col-1_row-16" id="table_2_col-1_row-16"></td>
+                                    <td><input type="number" step="any" name="table_2_col-2_row-16" id="table_2_col-2_row-16"></td>
+                                </tr>
+                        
+                        
+                                <tr>
+                                    <td><input type="number" step="any" name="table_2_col-1_row-17" id="table_2_col-1_row-17"></td>
+                                    <td><input type="number" step="any" name="table_2_col-2_row-17" id="table_2_col-2_row-17"></td>
+                                </tr>
+                                
+                                
+                                <tr>
+                                    <td><input type="number" step="any" name="table_2_col-1_row-18" id="table_2_col-1_row-18"></td>
+                                    <td><input type="number" step="any" name="table_2_col-2_row-18" id="table_2_col-2_row-18"></td>
+                                </tr>
+
+
+                            </table>
+                        </div>
+                    </div>
+                    <div class="container_blockXarakter">
                         <div class="inputData blockXarakter">
                             
                             <table class="table_3">
@@ -372,27 +379,28 @@
                             </table>
                         </div>
                     </div>
-                    
-                    <div class="wrwpperOtchet">
-                        <div class="inputData blockOtchet">
-                            <!-- <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic obcaecati beatae incidunt rem minus eum consequuntur non. Provident vero vitae, tempora quos nobis a ex quam magni vel, ducimus ipsa.
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic obcaecati beatae incidunt rem minus eum consequuntur non. Provident vero vitae, tempora quos nobis a ex quam magni vel, ducimus ipsa.
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic obcaecati beatae incidunt rem minus eum consequuntur non. Provident vero vitae, tempora quos nobis a ex quam magni vel, ducimus ipsa.
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic obcaecati beatae incidunt rem minus eum consequuntur non. Provident vero vitae, tempora quos nobis a ex quam magni vel, ducimus ipsa.
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic obcaecati beatae incidunt rem minus eum consequuntur non. Provident vero vitae, tempora quos nobis a ex quam magni vel, ducimus ipsa.
-                            </p> -->
-                            <!-- <iframe src="document.html" frameborder="0" name="my-docx-content" id="my-docx-content">Отчет</iframe> -->
-                            <!-- <div><textarea name="my-docx-content" id="my-docx-content" cols="50" rows="50" >Привет, это textarea</textarea></div> -->
-                            <table>
-                                <td class="CelCentr" ><label class="CelCentr">Отчет</label></td>
-                            </table>
-                            <div class="my-docx-content" id="my-docx-content">"Здесь DIV"</div>
-                            <!-- <script type="text/javascript" src="main.js"></script> -->
+
+                </div>
+                
+                <div class="wrwpperOtchet">
+                    <div class="inputData blockOtchet">
+                        <!-- <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic obcaecati beatae incidunt rem minus eum consequuntur non. Provident vero vitae, tempora quos nobis a ex quam magni vel, ducimus ipsa.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic obcaecati beatae incidunt rem minus eum consequuntur non. Provident vero vitae, tempora quos nobis a ex quam magni vel, ducimus ipsa.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic obcaecati beatae incidunt rem minus eum consequuntur non. Provident vero vitae, tempora quos nobis a ex quam magni vel, ducimus ipsa.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic obcaecati beatae incidunt rem minus eum consequuntur non. Provident vero vitae, tempora quos nobis a ex quam magni vel, ducimus ipsa.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic obcaecati beatae incidunt rem minus eum consequuntur non. Provident vero vitae, tempora quos nobis a ex quam magni vel, ducimus ipsa.
+                        </p> -->
+                        <!-- <iframe src="document.html" frameborder="0" name="my-docx-content" id="my-docx-content">Отчет</iframe> -->
+                        <!-- <div><textarea name="my-docx-content" id="my-docx-content" cols="50" rows="50" >Привет, это textarea</textarea></div> -->
+                        <table>
+                            <td class="CelCentr" ><label class="CelCentr">Отчет</label></td>
+                        </table>
+                        <div class="my-docx-content" id="my-docx-content">"Здесь DIV"</div>
+                        <!-- <script type="text/javascript" src="main.js"></script> -->
 
 
-                            
-                        </div>
+                        
                     </div>
                 </div>
             </div>
