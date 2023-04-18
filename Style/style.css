@@ -14,7 +14,9 @@ input::-webkit-inner-spin-button {
 
 :root {
   --vxv_border: 2px solid #ffffff89;
-  box-shadow: inset;
+  --vxv_box-shadow: inset 0px 0px 5px #37363689;
+  --vxv_top: 62px;
+
 
 }
 
@@ -63,8 +65,11 @@ button:hover {
 header{
   background-color: rgba(174, 125, 101, 1);
   display: flex;
+  /* display: none; */
+
   box-sizing: border-box;
   border: var(--vxv_border);
+  box-shadow: 0px 0px 5px #37363689;
 
 
   align-items: center;
@@ -81,16 +86,16 @@ header{
 .wrapperblock {
   background: #b5b4b4;
   /* background: #09ae27; */
-  border: var(--vxv_border);
+  /* border: var(--vxv_border); */
   box-sizing: border-box;
   font-size: 12px;
   display: flex;
   box-sizing: border-box;
-  overflow: auto;
-  height: 100%;
-  border: 10px solid #b5b4b4;
+  /* overflow: auto; */
+  /* height: 100%; */
   position: fixed;
-  top: 60px;
+  top: var(--vxv_top);
+  left: 0;
   width: 100vw;
   height: calc(100vh - 60px);
   z-index: -1;
@@ -100,84 +105,68 @@ header{
 
 .wrwpperData {
   box-sizing: border-box;
-  flex-basis: 20%;
+  /* flex-basis: 20%; */
   position: fixed;
-  width: auto;
-  width: 400px;
-  top: 60px;
+  /* width: auto; */
+  /* width: 320px; */
+  width: 360px;
+  padding: 5px;
+  top: var(--vxv_top);
+  left: 0;
+
+  /* border: 2px solid #ffffff89; */
+  /* border: 2px solid #df0b0b; */
+
+
 }
 
 .container_blockSvay_and_blockSkvajina {
   box-sizing: border-box;
   display: flex;
   height: 530px;
+  /* width: 100%; */
 }
 
 .container_blockXarakter {
   box-sizing: border-box;
   min-height: 145px;
+  width: 100%;
 }
 
 .blockXarakter {
-  height: calc(100vh - 60px - 530px - 20px);
+  height: calc(100vh - 60px - 530px - 22px);
   overflow: auto;
-  /* margin-bottom:  5px; */
 }
 
-
 .inputData {
+  box-sizing: border-box;
   margin: 10px 5px 0px 0px;
+  margin: 5px;
   padding: 10px;
   /* border: 2px solid #ffffff89; */
   border: var(--vxv_border);
-  box-sizing: border-box;
+  box-shadow: var(--vxv_box-shadow);
 }
 
-
-.wrwpperOtchet {
-  box-sizing: border-box;
-  display: block;
-  border: var(--vxv_border);
-  position: fixed;
-  top: calc(60px + 10px);    
-  top: 70px;
-  left: 415px;
-  right: 10px;
-  bottom: 10px;
-  overflow: auto;
-
-}
 
 .blockOtchet {
-  height: 100%;
-  min-height: 100px;
-  margin: 0px;
-  padding: 0px;
-  position: absolute;
-  top: calc(60px + 10px);    
-  top: 0;
-  left: 10px;
-  right: 10px;
-  bottom: 10px;
-
-}
-
-
-.my-docx-content {
-  /* min-height: 470px; */
-  overflow: auto;
-
-}
-
-footer {
+  box-sizing: border-box;
   display: block;
   position: fixed;
-  bottom: 0;
-  background-color: #fff;
-  background-color: #c00b0b;
-  width: 100vw;
-  height: 10px;
+  top: calc(var(--vxv_top) + 10px);
+  left: 360px;
+  right: 10px;
+  bottom: 10px;
+  border: var(--vxv_border);
+  box-shadow: var(--vxv_box-shadow);
+  overflow: auto;
+  padding: 10px;
 }
+
+.my-docx-content {
+  overflow: auto;
+}
+
 
 
 /* table start ---------------------------------------------------------------------------''' */
@@ -197,8 +186,6 @@ table td {
 }
 
 
-
-
 /* table cells start---------------------------------------------------------------------------''' */
 
 table input[type="number"] {
@@ -208,7 +195,6 @@ table input[type="number"] {
   border: 2px solid #ccc;
   min-width: 50px;
   width: 100%;
-
   height: 24px;
   text-align: center;
 }
@@ -234,5 +220,14 @@ table label {
 }
 
 /* table cells End ---------------------------------------------------------------------------''' */
+
+#submit {
+  background-color: #8f8c8c48;
+  width: 100px;
+  height: 30px;
+}
+#submit:hover {
+  background-color: #8f8c8cfe;
+}
 
 /* media ---------------------------------------------------------------------------''' */
