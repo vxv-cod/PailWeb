@@ -10,7 +10,7 @@ const LS = localStorage;
 form.addEventListener('input', function(event){
     formData[event.target.name] = event.target.value;
     LS.setItem('formData', JSON.stringify(formData));
-    eel.printpy('formData = ', formData)
+    // eel.printpy('formData = ', formData)
 });
 
 
@@ -20,7 +20,7 @@ if (LS.getItem('formData')) {
     // form.elements[name]
     for (let key in formData){
         if (key != 'my-docx-content') {
-            eel.printpy('key = ', key)
+            // eel.printpy('key = ', key)
             form.elements[key].value = formData[key];
         }
     }
@@ -38,6 +38,16 @@ document.querySelector("#submit").onclick = async function sendData(){
     let content = await eel.value_py(formDataPy)();
     let el = document.getElementById('my-docx-content');
     el.innerHTML  = content;
+
+
+
+    // let img_ = document.getElementById('geolograxrezimgdiv');
+    // eel.printpy(img_.innerHTML)
+    // img_.innerHTML  = '<img class="geolograxrezimg" src="image.png" alt="">';
+
+    const newcard = document.querySelector('.geolograxrezimgdiv');
+    newcard.setAttribute('src', 'image.png');
+
 } 
 
 

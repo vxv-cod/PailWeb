@@ -305,6 +305,7 @@ def raschet(dannie, ige_skv, nni, ige_xap, qi_xap, fi_xap):
     # ui.label_10.setPixmap(pixmap)
 
     ex.setStyleSheet("background-color: rgb(255, 255, 255);")
+    ex.setStyleSheet("background-color: rgb(181, 180, 180);")
     ee = ex.grab()
     pix = QPixmap(ee)
 
@@ -600,6 +601,9 @@ def raschet(dannie, ige_skv, nni, ige_xap, qi_xap, fi_xap):
     # ui.textEdit.setFontWeight(1)
     
     pix.save("image.png")
+    # fff = os.getcwd() + '/image/image.png'
+    # print(fff)
+    # pix.save(fff)
     # ui.label_10.grab().save("image.png")
     paragraph = document.add_paragraph()
     paragraph.add_run('Геологический разрез', style='Intense Emphasis').bold = True

@@ -16,6 +16,9 @@ input::-webkit-inner-spin-button {
   --vxv_border: 2px solid #ffffff89;
   --vxv_box-shadow: inset 0px 0px 5px #37363689;
   --vxv_top: 62px;
+  --vxv_imageres_wihgt: 185px;
+  --vxv_wrwpperData_wihgt: 360px;
+  --vxv_left: calc(var(--vxv_wrwpperData_wihgt) + var(--vxv_imageres_wihgt) + 0px);
 
 
 }
@@ -109,10 +112,11 @@ header{
   position: fixed;
   /* width: auto; */
   /* width: 320px; */
-  width: 360px;
+  width: var(--vxv_wrwpperData_wihgt);
   padding: 5px;
   top: var(--vxv_top);
-  left: 0;
+  left: calc(var(--vxv_imageres_wihgt) + 10px);
+  ;
 
   /* border: 2px solid #ffffff89; */
   /* border: 2px solid #df0b0b; */
@@ -124,17 +128,21 @@ header{
   box-sizing: border-box;
   display: flex;
   height: 530px;
+  height: 545px;
   /* width: 100%; */
+  /* width: 360px; */
+
 }
 
 .container_blockXarakter {
   box-sizing: border-box;
   min-height: 145px;
   width: 100%;
+
 }
 
 .blockXarakter {
-  height: calc(100vh - 60px - 530px - 22px);
+  height: calc(100vh - var(--vxv_top) - 530px - 22px - 15px);
   overflow: auto;
 }
 
@@ -143,24 +151,38 @@ header{
   margin: 10px 5px 0px 0px;
   margin: 5px;
   padding: 10px;
+  padding: 0px 10px 10px 10px;
   /* border: 2px solid #ffffff89; */
   border: var(--vxv_border);
   box-shadow: var(--vxv_box-shadow);
 }
 
 
+.imageres {
+  box-sizing: border-box;
+  position: fixed;
+  /* top: 0; */
+
+  width: var(--vxv_imageres_wihgt);
+  /* background-color: #e5ff00; */
+  height: calc(100vh - var(--vxv_top) - 22px);
+  /* display: none; */
+  left: 5px;
+}
+
 .blockOtchet {
   box-sizing: border-box;
   display: block;
   position: fixed;
   top: calc(var(--vxv_top) + 10px);
-  left: 360px;
+  left: calc(var(--vxv_left) + 10px);
   right: 10px;
-  bottom: 10px;
+  bottom: 12px;
   border: var(--vxv_border);
   box-shadow: var(--vxv_box-shadow);
   overflow: auto;
-  padding: 10px;
+  padding: 0 10px;
+  margin-left: 0 5px;
 }
 
 .my-docx-content {
@@ -179,6 +201,9 @@ table {
 table td {
   vertical-align: middle;
   height: 25px;
+  /* border: 2px solid #ccc; */
+
+  
 }
 
 .table_1 td:nth-child(1) {
@@ -208,16 +233,18 @@ table label {
   text-align: center;
   vertical-align: middle;
   box-sizing: border-box;
+  font-weight: 700;
 
 }
 
-.CelCentr {
+/* .CelCentr {
   font-weight: 700;
 }
 
 .CelCentr2 {
   font-weight: 400;
-}
+} */
+
 
 /* table cells End ---------------------------------------------------------------------------''' */
 
@@ -230,4 +257,21 @@ table label {
   background-color: #8f8c8cfe;
 }
 
+.geologlabel {
+  /* background-color: #fff; */
+  display: block;
+  text-align: center;
+  box-sizing: border-box;
+  height: 25px;
+  font-weight: 700;
+  padding: 5px;
+  box-align: center;
+
+
+}
+
+.geolograxrezimg {
+  height: auto;
+  width: 100%;
+}
 /* media ---------------------------------------------------------------------------''' */
