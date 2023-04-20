@@ -304,8 +304,9 @@ def raschet(dannie, ige_skv, nni, ige_xap, qi_xap, fi_xap):
     # ui.label_10.setGeometry(QtCore.QRect(0, 0, 190, Hrisunka))
     # ui.label_10.setPixmap(pixmap)
 
-    ex.setStyleSheet("background-color: rgb(255, 255, 255);")
-    ex.setStyleSheet("background-color: rgb(181, 180, 180);")
+    # ex.setStyleSheet("background-color: rgb(255, 255, 255);")
+    # ex.setStyleSheet("background-color: rgb(181, 180, 180, 100);")
+    ex.setStyleSheet("background-color: rgb(255, 255, 255, 0);")
     ee = ex.grab()
     pix = QPixmap(ee)
 

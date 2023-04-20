@@ -10,7 +10,7 @@ def printpy(*args):
 
 @eel.expose
 def value_py(respo):
-    print(f"respo = {respo}")
+    # print(f"respo = {respo}")
     
     dannie_key = [
         'Otmetka_verha',

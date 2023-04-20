@@ -38,57 +38,11 @@ document.querySelector("#submit").onclick = async function sendData(){
     let content = await eel.value_py(formDataPy)();
     let el = document.getElementById('my-docx-content');
     el.innerHTML  = content;
-
-
-
-    // let img_ = document.getElementById('geolograxrezimgdiv');
-    // eel.printpy(img_.innerHTML)
-    // img_.innerHTML  = '<img class="geolograxrezimg" src="image.png" alt="">';
-
-    const newcard = document.querySelector('.geolograxrezimgdiv');
-    newcard.setAttribute('src', 'image.png');
-
+  
+    // Вставляем картинку с геологическим разрезом
+    const razrez = document.querySelector('.razrez');
+    razrez.innerHTML  = '<img class="geolograxrezimg" src="./image.png" alt="Картинка"></img>';
 } 
-
-
-
-// // Отслеживание нажатие кнопки
-// let btn = document.querySelector("#submit");
-// btn.addEventListener("click", sendData);
-
-
-// async function sendData() {
-//     let formDataPy = {};
-//     for (let key in form.elements){
-//         if (form.elements[key].value != ''  && form.elements[key].value != null) {
-//             formDataPy[key] = form.elements[key].value;
-//         }
-
-//     }
-//     let content = await eel.value_py(formDataPy)();
-//     // eel.printpy('content = ', content)
-//     let el = document.getElementById('my-docx-content');
-//     el.innerHTML  = content;
-// }
-
-
-// Отслеживание нажатие кнопки
-document.querySelector("#submit").onclick = async function sendData(){ 
-    let formDataPy = {};
-    for (let key in form.elements){
-        if (form.elements[key].value != ''  && form.elements[key].value != null) {
-            formDataPy[key] = form.elements[key].value;
-        }
-    }
-    let content = await eel.value_py(formDataPy)();
-    let el = document.getElementById('my-docx-content');
-    el.innerHTML  = content;
-} 
-
-
-
-
-
 
 
 

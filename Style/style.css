@@ -14,8 +14,8 @@ input::-webkit-inner-spin-button {
 
 :root {
   --vxv_border: 2px solid #ffffff89;
-  --vxv_box-shadow: inset 0px 0px 5px #37363689;
-  --vxv_top: 62px;
+  --vxv_box-shadow: inset 0px 0px 10px #37363689;
+  --vxv_top: 60px;
   --vxv_imageres_wihgt: 185px;
   --vxv_wrwpperData_wihgt: 360px;
   --vxv_left: calc(var(--vxv_wrwpperData_wihgt) + var(--vxv_imageres_wihgt) + 0px);
@@ -69,12 +69,9 @@ header{
   background-color: rgba(174, 125, 101, 1);
   display: flex;
   /* display: none; */
-
   box-sizing: border-box;
-  border: var(--vxv_border);
-  box-shadow: 0px 0px 5px #37363689;
-
-
+  /* border: var(--vxv_border); */
+  /* box-shadow: 0px 0px 5px #37363689; */
   align-items: center;
   padding: 0 10px;
   /* position: sticky; */
@@ -116,12 +113,6 @@ header{
   padding: 5px;
   top: var(--vxv_top);
   left: calc(var(--vxv_imageres_wihgt) + 10px);
-  ;
-
-  /* border: 2px solid #ffffff89; */
-  /* border: 2px solid #df0b0b; */
-
-
 }
 
 .container_blockSvay_and_blockSkvajina {
@@ -129,9 +120,6 @@ header{
   display: flex;
   height: 530px;
   height: 545px;
-  /* width: 100%; */
-  /* width: 360px; */
-
 }
 
 .container_blockXarakter {
@@ -144,6 +132,8 @@ header{
 .blockXarakter {
   height: calc(100vh - var(--vxv_top) - 530px - 22px - 15px);
   overflow: auto;
+  position: relative;
+  
 }
 
 .inputData {
@@ -157,18 +147,6 @@ header{
   box-shadow: var(--vxv_box-shadow);
 }
 
-
-.imageres {
-  box-sizing: border-box;
-  position: fixed;
-  /* top: 0; */
-
-  width: var(--vxv_imageres_wihgt);
-  /* background-color: #e5ff00; */
-  height: calc(100vh - var(--vxv_top) - 22px);
-  /* display: none; */
-  left: 5px;
-}
 
 .blockOtchet {
   box-sizing: border-box;
@@ -201,9 +179,6 @@ table {
 table td {
   vertical-align: middle;
   height: 25px;
-  /* border: 2px solid #ccc; */
-
-  
 }
 
 .table_1 td:nth-child(1) {
@@ -257,21 +232,28 @@ table label {
   background-color: #8f8c8cfe;
 }
 
-.geologlabel {
-  /* background-color: #fff; */
-  display: block;
-  text-align: center;
+/* Геологический размрез---------------------------------------------------------------------''' */
+.imageres {
   box-sizing: border-box;
-  height: 25px;
-  font-weight: 700;
-  padding: 5px;
-  box-align: center;
-
-
+  position: fixed;
+  width: var(--vxv_imageres_wihgt);
+  height: calc(100vh - var(--vxv_top) - 22px);
+  left: 5px;
+  overflow: auto;
+  /* background-color: #fff; */
 }
 
 .geolograxrezimg {
   height: auto;
   width: 100%;
 }
+/* END Геологический размрез-----------------------------------------------------------------''' */
+
+.fixi_two {
+  position: sticky;
+  top: 0;
+  border-bottom: 2px solid #ccc;
+  background-color: #b4b4b4;
+}
+
 /* media ---------------------------------------------------------------------------''' */
