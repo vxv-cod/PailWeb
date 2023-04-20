@@ -7,6 +7,8 @@ import pickle
 # from okno_general import ui
 # from okno_general import Form
 # from okno_general import app
+from PyQt5.QtCore import QByteArray, QBuffer, Qt
+from io import BytesIO
 
 # from Tab73 import fsi73
 
@@ -299,17 +301,29 @@ def raschet(dannie, ige_skv, nni, ige_xap, qi_xap, fi_xap):
     Hrisunka = sum(nni)*30 + 30 + (l2 * 30 if l2 >= 0 else 0)
     ex = Example(nni, brs, l1, l2, Hrisunka)
     # ex.setStyleSheet("background-color: rgb(254, 254, 254);")
-    ee = ex.grab()
-    pixmap = QPixmap(ee)
+    # ee = ex.grab()
+    # pixmap = QPixmap(ee)
     # ui.label_10.setGeometry(QtCore.QRect(0, 0, 190, Hrisunka))
     # ui.label_10.setPixmap(pixmap)
 
     # ex.setStyleSheet("background-color: rgb(255, 255, 255);")
     # ex.setStyleSheet("background-color: rgb(181, 180, 180, 100);")
+    # ex.setStyleSheet("background-color: rgba(255, 255, 255, 0);")
     ex.setStyleSheet("background-color: rgb(255, 255, 255, 0);")
     ee = ex.grab()
-    pix = QPixmap(ee)
+    pixmap = QPixmap(ee)
 
+    '''Перегоняем картинку в байт код, передаем в буфер и собираем в переменную htmlimage    '''
+    data = QByteArray()
+    buffer = QBuffer(data)
+    pixmap.save(buffer, "PNG")
+    # сохраняем в буфер для передачи в python-docx
+    byte_array = buffer.data()
+    # конвертируем байт-код в base64
+    base64 = data.toBase64().data().decode()
+    # собираем html-teg
+    htmlimage = f'<img class="geolograxrezimg" src="data:image/png;base64,{base64}">'
+    
     # return
 
     # Вывод ошибки при не корректных исходных данных:
@@ -601,7 +615,7 @@ def raschet(dannie, ige_skv, nni, ige_xap, qi_xap, fi_xap):
     text_centr('''Расчет одиночной сваи по результатам статического зондирования''')
     # ui.textEdit.setFontWeight(1)
     
-    pix.save("image.png")
+    
     # fff = os.getcwd() + '/image/image.png'
     # print(fff)
     # pix.save(fff)
@@ -609,7 +623,12 @@ def raschet(dannie, ige_skv, nni, ige_xap, qi_xap, fi_xap):
     paragraph = document.add_paragraph()
     paragraph.add_run('Геологический разрез', style='Intense Emphasis').bold = True
     paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    document.add_picture('image.png', width=Cm(5.0))
+    
+    # pixmap.save("image.png")
+    # document.add_picture('image.png', width=Cm(5.0))
+    
+    document.add_picture(BytesIO(byte_array), width=Cm(5.0))
+    
     document.paragraphs[-1].alignment = WD_ALIGN_PARAGRAPH.CENTER
 
     # ui.textEdit.setFontUnderline(True)
@@ -870,6 +889,11 @@ def raschet(dannie, ige_skv, nni, ige_xap, qi_xap, fi_xap):
     #     for paragraph in document.paragraphs:
     #         file.write(paragraph.text + '\n')
     
+    
+    
+    
+    
+    
 
     document.save('result.docx')
 
@@ -878,10 +902,13 @@ def raschet(dannie, ige_skv, nni, ige_xap, qi_xap, fi_xap):
         file.close()    
     # return document
     # print(textOtchet)
+
+    
     print('----------------------------------')
     print('----------------------------------')
     
-    return textOtchet
+    return textOtchet, htmlimage
+    # return textOtchet
 # # ----------------------------------------------------------------------------------------
 # def text_abzac_color_000(x):
 #     ui.textEdit.setTextColor(QtGui.QColor (0, 100, 150))

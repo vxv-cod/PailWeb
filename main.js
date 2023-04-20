@@ -37,11 +37,13 @@ document.querySelector("#submit").onclick = async function sendData(){
     }
     let content = await eel.value_py(formDataPy)();
     let el = document.getElementById('my-docx-content');
-    el.innerHTML  = content;
+    // el.innerHTML  = content[0];
+    el.innerHTML  = content[0];
   
     // Вставляем картинку с геологическим разрезом
     const razrez = document.querySelector('.razrez');
-    razrez.innerHTML  = '<img class="geolograxrezimg" src="./image.png" alt="Картинка"></img>';
+    // razrez.innerHTML  = '<img class="geolograxrezimg" src="./image.png" alt="Картинка"></img>';
+    razrez.innerHTML  = content[1];
 } 
 
 
