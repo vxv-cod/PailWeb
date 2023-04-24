@@ -44,7 +44,70 @@ document.querySelector("#submit").onclick = async function sendData(){
     const razrez = document.querySelector('.razrez');
     // razrez.innerHTML  = '<img class="geolograxrezimg" src="./image.png" alt="Картинка"></img>';
     razrez.innerHTML  = content[1];
+
+    
+// } 
+
+// let qqq = document.querySelector('.qqq');
+// qqq.innerHTML  = content[2];
+
+    
+    
+    // // создать объект Blob для docx файла
+    // const docxFileData = content[2];
+    // // const blob = new Blob([docxFileData], { type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' });
+    // const blob = new Blob([docxFileData], { type: 'application/msword' });
+
+    // // // // создать URL для объекта Blob
+    // // const url = URL.createObjectURL(blob);
+    // // const url = '/result.docx';
+    // const url = URL.createObjectURL(blob);
+    // console.log(url)
+
+    // // // создать ссылку на скачивание файла
+    // const link = document.createElement('a');
+    // link.href = url;
+    // link.download = 'result.docx';
+
+    // // добавить ссылку на страницу и кликнуть по ней, чтобы загрузить файл
+    // document.body.appendChild(link);
+    // link.click();
+
+    // // освободить ресурсы, используемые URL-адресом объекта Blob
+    // URL.revokeObjectURL(url);
+
+    
+    
+    
+    const link = document.createElement('a');
+
+    link.href = content[2];
+    link.download = 'result.docx';
+
+    // добавить ссылку на страницу и кликнуть по ней, чтобы загрузить файл
+    // document.body.appendChild(link);
+    link.click();
+
+    // освободить ресурсы, используемые URL-адресом объекта Blob
+    URL.revokeObjectURL(url);
+
 } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
