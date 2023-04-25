@@ -27,8 +27,7 @@ if (LS.getItem('formData')) {
 }
 
 
-// Отслеживание нажатие кнопки
-document.querySelector("#submit").onclick = async function sendData(){ 
+async function funformDataPy() {
     let formDataPy = {};
     for (let key in form.elements){
         if (form.elements[key].value != ''  && form.elements[key].value != null) {
@@ -36,51 +35,31 @@ document.querySelector("#submit").onclick = async function sendData(){
         }
     }
     let content = await eel.value_py(formDataPy)();
+    return content;
+}
+
+
+async function sendData(){ 
+    let content = await funformDataPy();
     let el = document.getElementById('my-docx-content');
-    // el.innerHTML  = content[0];
     el.innerHTML  = content[0];
-  
     // Вставляем картинку с геологическим разрезом
     const razrez = document.querySelector('.razrez');
     // razrez.innerHTML  = '<img class="geolograxrezimg" src="./image.png" alt="Картинка"></img>';
     razrez.innerHTML  = content[1];
+} 
 
-    
-// } 
+// Отслеживание нажатие кнопки
+document.querySelector("#submit").onclick = sendData
 
-// let qqq = document.querySelector('.qqq');
-// qqq.innerHTML  = content[2];
 
-    
-    
-    // // создать объект Blob для docx файла
-    // const docxFileData = content[2];
-    // // const blob = new Blob([docxFileData], { type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' });
-    // const blob = new Blob([docxFileData], { type: 'application/msword' });
+async function sendDataTwo(){ 
 
-    // // // // создать URL для объекта Blob
-    // // const url = URL.createObjectURL(blob);
-    // // const url = '/result.docx';
-    // const url = URL.createObjectURL(blob);
-    // console.log(url)
+    // let qqq = document.querySelector('.qqq');
+    // qqq.innerHTML  = content[2];
 
-    // // // создать ссылку на скачивание файла
-    // const link = document.createElement('a');
-    // link.href = url;
-    // link.download = 'result.docx';
-
-    // // добавить ссылку на страницу и кликнуть по ней, чтобы загрузить файл
-    // document.body.appendChild(link);
-    // link.click();
-
-    // // освободить ресурсы, используемые URL-адресом объекта Blob
-    // URL.revokeObjectURL(url);
-
-    
-    
-    
     const link = document.createElement('a');
-
+    let content = await funformDataPy();
     link.href = content[2];
     link.download = 'result.docx';
 
@@ -90,14 +69,10 @@ document.querySelector("#submit").onclick = async function sendData(){
 
     // освободить ресурсы, используемые URL-адресом объекта Blob
     URL.revokeObjectURL(url);
+    }
 
-} 
-
-
-
-
-
-
+// Отслеживание нажатие кнопки
+document.querySelector("#loaddocx").onclick = sendDataTwo
 
 
 

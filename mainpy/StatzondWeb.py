@@ -907,7 +907,7 @@ def raschet(dannie, ige_skv, nni, ige_xap, qi_xap, fi_xap):
 
     print('----------------------------------')
     
-    print(document)
+    # print(document)
     docx_file_base64 = loadDocx.generate_docx(document)
     # print(docx_file_base64)
     
