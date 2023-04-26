@@ -41,17 +41,7 @@ h1 {
     padding: 0 5px;
 }
 
-button {
-  background: #dddcdc7d;
-  background: rgb(178, 177, 177);
-  box-sizing: border-box;
-  box-shadow: 0px 0px 5px rgba(5, 5, 5, 0.578);
-}
 
-button:hover {
-  background: #1717177d;
-  color: wheat;
-}
 
 /* block start ---------------------------------------------------------------------------''' */
 
@@ -223,14 +213,49 @@ table label {
 
 /* table cells End ---------------------------------------------------------------------------''' */
 
-#submit {
+/* button, #loaddocx {
   background-color: #8f8c8c48;
-  width: 100px;
+  width: auto;
   height: 30px;
 }
-#submit:hover {
+button:hover, #loaddocx:hover {
+  background-color: #8f8c8cfe;
+} */
+
+/* #submit {
+  width: 100px;
+}
+
+a {
+  text-decoration: none;
+} */
+
+button {
+  box-sizing: border-box;
+  box-shadow: 0px 0px 5px rgba(5, 5, 5, 0.578);
+  background-color: #8f8c8c48;
+  width: auto;
+  height: 30px;
+}
+
+button:hover {
+  color: wheat;
   background-color: #8f8c8cfe;
 }
+
+#submit {
+  width: 100px;
+}
+
+
+/* #loaddocx {
+  text-decoration: none;
+}
+
+#loaddocx:hover {
+  color: wheat;
+  background-color: #8f8c8cfe;
+} */
 
 /* Геологический размрез---------------------------------------------------------------------''' */
 .imageres {

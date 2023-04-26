@@ -9,6 +9,8 @@ import pickle
 # from okno_general import app
 from PyQt5.QtCore import QByteArray, QBuffer, Qt
 from io import BytesIO
+import loadDocx
+
 
 # from Tab73 import fsi73
 
@@ -895,7 +897,7 @@ def raschet(dannie, ige_skv, nni, ige_xap, qi_xap, fi_xap):
     
     
 
-    document.save('result.docx')
+    # document.save('result.docx')
 
     with open('document.html', 'w', encoding='utf-8') as file:
         file.write(textOtchet)
@@ -903,11 +905,16 @@ def raschet(dannie, ige_skv, nni, ige_xap, qi_xap, fi_xap):
     # return document
     # print(textOtchet)
 
-    
-    print('----------------------------------')
     print('----------------------------------')
     
-    return textOtchet, htmlimage
+    # print(document)
+    docx_file_base64 = loadDocx.generate_docx(document)
+    # print(docx_file_base64)
+    
+    
+    print('----------------------------------')
+    
+    return textOtchet, htmlimage, docx_file_base64
     # return textOtchet
 # # ----------------------------------------------------------------------------------------
 # def text_abzac_color_000(x):
