@@ -1,8 +1,4 @@
 /xxx
 /venv
 *.docx
-result.docx
-__pycache__/loadDocx.cpython-37.pyc
-/mainpy/__pycache__
-/__pycache__
-
+__pycache__
