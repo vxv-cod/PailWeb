@@ -1,15 +1,7 @@
 import eel
-from fun import *
-# import fun
+from mainpy.fun import *
 
 
-
-
-
-
-eel.init('')
+eel.init('webfail')
 # eel.start('index.html', mode="chrome", size=(1024, 625))
 eel.start('index.html', size=(1200, 700))
-
-printpy('eeeeeeeeeee')
-

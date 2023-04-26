@@ -1,6 +1,5 @@
 import eel
 from mainpy.StatzondWeb import raschet
-from mainpy.Tab73 import fsi73
 
 # from rich import print
 

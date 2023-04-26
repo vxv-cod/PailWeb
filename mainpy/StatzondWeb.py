@@ -1,29 +1,36 @@
-from fileinput import filename
-from smtplib import SMTP_SSL
+# from fileinput import filename
+# from smtplib import SMTP_SSL
 from PyQt5 import QtCore, QtGui, QtWidgets
-import os
+# import os
 import sys
-import pickle
+# import pickle
+
+import mainpy.loadDocx as loadDocx
+from mainpy.Tab73 import fsi73
+
+
 # from okno_general import ui
 # from okno_general import Form
 # from okno_general import app
 from PyQt5.QtCore import QByteArray, QBuffer, Qt
 from io import BytesIO
-import loadDocx
+# import loadDocx
+
 
 
 # from Tab73 import fsi73
 
 # import docx
 from docx import Document
-from docx.shared import Inches, Pt, Cm
+# from docx.shared import Inches, Pt, Cm
+from docx.shared import Cm
 from docx.enum.text import WD_ALIGN_PARAGRAPH
-from docx.shared import RGBColor
+# from docx.shared import RGBColor
 document = Document()
 
 # Рисунок
 from PyQt5.QtWidgets import QWidget
-from PyQt5.QtWidgets import QApplication
+# from PyQt5.QtWidgets import QApplication
 from PyQt5.QtGui import QPainter
 from PyQt5.QtGui import QBrush
 from PyQt5.QtGui import QPen
@@ -875,47 +882,20 @@ def raschet(dannie, ige_skv, nni, ige_xap, qi_xap, fi_xap):
             text_abzac('Расчетная удерживающая сила по боковой поверхности свай: {} тс'.format(round(Fyderj, 2)))
     
     
-    
-    
-    
-    # print(document)
-    
-    '''# Используя следующий код, можно получить весь текст документа:'''
-    # text = []
-    # for paragraph in document.paragraphs:
-    #     text.append(paragraph.text)
-    # print('\n\n'.join(text))
-    
-    # text = []
-    # with open("result.html", "w", encoding='utf-8') as file:
-    #     for paragraph in document.paragraphs:
-    #         file.write(paragraph.text + '\n')
-    
-    
-    
-    
-    
-    
-
     # document.save('result.docx')
 
-    with open('document.html', 'w', encoding='utf-8') as file:
-        file.write(textOtchet)
-        file.close()    
-    # return document
-    # print(textOtchet)
+    # with open('document.html', 'w', encoding='utf-8') as file:
+    #     file.write(textOtchet)
+    #     file.close()    
 
     print('----------------------------------')
     
-    # print(document)
     docx_file_base64 = loadDocx.generate_docx(document)
-    # print(docx_file_base64)
-    
     
     print('----------------------------------')
     
     return textOtchet, htmlimage, docx_file_base64
-    # return textOtchet
+
 # # ----------------------------------------------------------------------------------------
 # def text_abzac_color_000(x):
 #     ui.textEdit.setTextColor(QtGui.QColor (0, 100, 150))
